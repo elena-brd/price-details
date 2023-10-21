@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #02162b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem auto;
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    background: #023e8a;
+    color: #fff;
+    padding: 0.3rem 2rem 0.4rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    background: #1790b8;
+}
+
+/* circle */
+.circle-cover {
+    position: relative;
+    z-index: -10;
+}
+
+.circle-up {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #1790b8;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    animation: bounce 1s alternate infinite ease-in-out;
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.circle-down {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #1790b8;
+    position: absolute;
+    top: 350px;
+    left: 150px;
+    animation: bounce 1.5s alternate infinite ease-in-out;
+}
+
+/* cards */
+.price-content {
+    z-index: 10;
+}
+
+.main-title {
+    text-align: center;
+    color: #fff;
+}
+
+.main-title h2 {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.main-title p {
+    font-weight: 300;
+}
+
+.price-cards {
+    display: flex;
+    margin-top: 2.5rem;
+    gap: 1.5rem;
+}
+
+.price-card {
+    animation: animate-left 1s;
+}
+
+@keyframes animate-left {
+    from {
+        transform: translateX(-100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.offer-card {
+    animation: animate-right 1s;
+}
+
+@keyframes animate-right {
+    from {
+        transform: translateX(100vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.price-cards .card {
+    background: #fff;
+    border-radius: 5px;
+    width: 380px;
+    height: 100%;
+    padding: 2rem 2rem 1rem;
+}
+
+.price-cards .card>div {
+    margin: 1.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.price-cards .card>div:last-child {
+    border-bottom: none;
+}
+
+.price-cards .card p {
+    margin: 0.3rem 0 1.5rem;
+}
+
+.price-cards .offer-card i {
+    background: #f4f4f4;
+    padding: 0.4rem 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+}
+
+@media(max-width: 750px) {
+    .circle-cover {
+        display: none;
+    }
+
+    .offer-card,
+    .price-card {
+        animation: none;
+    }
+
+    .price-cards {
+        display: block;
+    }
+
+    .offer-card {
+        margin-top: 2rem;
+    }
+
+}
